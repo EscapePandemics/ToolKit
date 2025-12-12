@@ -1,1 +1,1 @@
-![Alt text](backgroundESCAPElinkedin.png)
+![Alt text](backgroundESCAPELinkedin.png)
