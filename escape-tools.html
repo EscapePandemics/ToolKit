@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="ESCAPE consortium">
+
+<title>ESCAPE Digital Toolkit</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="escape-tools_files/libs/clipboard/clipboard.min.js"></script>
+<script src="escape-tools_files/libs/quarto-html/quarto.js"></script>
+<script src="escape-tools_files/libs/quarto-html/popper.min.js"></script>
+<script src="escape-tools_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="escape-tools_files/libs/quarto-html/anchor.min.js"></script>
+<link href="escape-tools_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="escape-tools_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="escape-tools_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="escape-tools_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="escape-tools_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-full toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#pathogen-archetypes" id="toc-pathogen-archetypes" class="nav-link active" data-scroll-target="#pathogen-archetypes">a. Pathogen archetypes</a></li>
+  <li><a href="#key-epidemiological-variables" id="toc-key-epidemiological-variables" class="nav-link" data-scroll-target="#key-epidemiological-variables">b. Key epidemiological variables</a></li>
+  <li><a href="#reference-models" id="toc-reference-models" class="nav-link" data-scroll-target="#reference-models">c.&nbsp;Reference models</a></li>
+  <li><a href="#epidemic-trends-and-measures" id="toc-epidemic-trends-and-measures" class="nav-link" data-scroll-target="#epidemic-trends-and-measures">d.&nbsp;Epidemic trends &amp; effectiveness of measures</a></li>
+  </ul>
+</nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
+<main class="content column-page-right" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">ESCAPE Digital Toolkit</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>ESCAPE consortium </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="{=html}">
+<style>
+
+  /* すべての var(--xxx) を直接色コードに置き換え済み */
+
+  body {
+    background-color: #D4D7DB;
+    color: #232E3D;
+    font-family: "helvetica-w01-roman", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+  }
+
+  main.content {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 3rem;
+  }
+
+  h1, h2, h3 {
+    font-family: "helvetica-w01-roman", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    color: #232E3D;
+    letter-spacing: 0.02em;
+  }
+
+  h1 {
+    border-bottom: 1px solid #C2C7CF;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  a {
+    color: #232E3D;
+    text-decoration: underline;
+    text-decoration-color: rgba(61, 155, 233, 0.6);
+  }
+  a:hover {
+    color: #3D9BE9;
+    text-decoration-color: #3D9BE9;
+  }
+
+  /* TOC */
+  nav#TOC {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    border: 1px solid #C2C7CF;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.75rem;
+  }
+  nav#TOC .toc-title {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #4B5563;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.35rem;
+  }
+
+  /* Tool layout */
+  .tool-section-intro {
+    color: #4B5563;
+    margin-top: -0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .tool-card {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    border: 1px solid #C2C7CF;
+    padding: 0.9rem 1rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .tool-title {
+    margin: 0;
+    font-size: 1.02rem;
+    font-weight: 700;
+  }
+
+  .tool-contrib {
+    margin: 0.1rem 0 0.4rem;
+    font-size: 0.9rem;
+    color: #4B5563;
+  }
+
+  .tool-desc {
+    margin: 0 0 0.35rem;
+    font-size: 0.96rem;
+  }
+
+  .tool-links {
+    margin: 0 0 0.25rem;
+    font-size: 0.9rem;
+  }
+
+  .Reference {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #4B5563;
+  }
+
+  /* Slight accent for section labels a–e */
+  .section-label {
+    display: inline-block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: #3D9BE9;
+    background-color: #E4F1FF;
+    padding: 0.1rem 0.45rem;
+    border-radius: 999px;
+    margin-bottom: 0.25rem;
+  }
+
+</style>
+</div>
+<p>This page summarises the tools described in the ESCAPE report, organised according to the report sections. For each tool, we provide a short running title, contributing institution(s), a brief description, a GitHub link, and reference to publication.</p>
+<hr>
+<section id="pathogen-archetypes" class="level2">
+<h2 class="anchored" data-anchor-id="pathogen-archetypes">a. Pathogen archetypes</h2>
+<p>Introductory tools that support the construction and analysis of pathogen archetypes across multiple diseases.</p>
+<div class="tool-card">
+<p class="tool-title">
+LSHTM Pathogen Archetypes
+</p>
+<p class="tool-contrib">
+<strong>Contributors:</strong> London School of Hygiene &amp; Tropical Medicine (LSHTM)
+</p>
+<p class="tool-desc">
+A modelling framework that organises infectious diseases into pathogen archetypes based on key characteristics such as transmission route, basic reproduction number, serial interval, and severity. It supports cross-pathogen comparison and helps translate evidence from well-studied infections to novel or emerging threats.
+</p>
+<p class="tool-links">
+<strong>GitHub:</strong> <a href="https://github.com/Jward2847/archetypes" target="_blank" rel="noopener"> Jward2847/archetypes </a>
+</p>
+<p class="Reference">
+<strong>Reference:</strong> <a href="https://doi.org/10.1101/2025.03.13.25323659" target="_blank" rel="noopener"> The epidemiology of pathogens with pandemic potential: A review of key parameters and clustering analysis (medRxiv) </a>
+</p>
+</div>
+<hr>
+</section>
+<section id="key-epidemiological-variables" class="level2">
+<h2 class="anchored" data-anchor-id="key-epidemiological-variables">b. Key epidemiological variables</h2>
+<p>Tools in this group estimate core quantities such as the serial interval, latent and infectious periods, reproduction numbers, and overdispersion.</p>
+<div class="tool-card">
+<p class="tool-title">
+EpiDelays – Nonparametric Serial-Interval Estimation
+</p>
+<p class="tool-contrib">
+<strong>Contributors:</strong> University of Hasselt
+</p>
+<p class="tool-desc">
+<code>EpiDelays</code> implements a nonparametric framework for estimating epidemiological delay distributions including serial-intervals distribution from interval-censored symptom onset data. It provides summary statistics and uncertainty quantification, and is suitable for both retrospective analyses and early outbreak assessment.
+</p>
+<p class="tool-links">
+<strong>GitHub:</strong> <a href="https://github.com/oswaldogressani/EpiDelays" target="_blank" rel="noopener"> oswaldogressani/EpiDelays </a>
+</p>
+<p class="Reference">
+<strong>Reference:</strong> <a href="https://doi.org/10.1371/journal.pcbi.1013338" target="_blank" rel="noopener"> Nonparametric serial interval estimation with uniform mixtures (PLOS Comput Biol) </a>
+</p>
+</div>
+<div class="tool-card">
+<p class="tool-title">
+mitey &amp; Vink Method – Serial-Interval Inference
+</p>
+<p class="tool-contrib">
+<strong>Contributors:</strong> National Institute for Public Health and the Environment (RIVM), Netherlands
+</p>
+<p class="tool-desc">
+The <code>mitey</code> package implements the Vink et al.&nbsp;method to estimate the mean and standard deviation of the serial interval, as well as time-varying case reproduction numbers. It is designed for reproducible analysis and has been applied to scabies and other infectious diseases using routine surveillance and outbreak data.
+</p>
+<p class="tool-links">
+<strong>GitHub:</strong> <a href="https://github.com/kylieainslie/mitey" target="_blank" rel="noopener"> kylieainslie/mitey </a>
+</p>
+<p class="Reference">
+<strong>Reference:</strong> <a href="https://dx.doi.org/10.2139/ssrn.5184990" target="_blank" rel="noopener"> Estimation of the Epidemiological Characteristics of Scabies (Nat Commun, in press) </a>
+</p>
+</div>
+<div class="tool-card">
+<p class="tool-title">
+Re and k from Cluster Size Distributions
+</p>
+<p class="tool-contrib">
+<strong>Contributors:</strong> University of Bern
+</p>
+<p class="tool-desc">
+This framework estimates the effective reproduction number (Re) and dispersion parameter k using the size distribution of transmission clusters defined by identical viral sequences. It quantifies heterogeneity in transmission and helps identify settings where superspreading plays a substantial role.
+</p>
+<p class="tool-links">
+<strong>GitHub:</strong> <a href="https://github.com/mwohlfender/R_overdispersion_cluster_size" target="_blank" rel="noopener"> mwohlfender/R_overdispersion_cluster_size </a>
+</p>
+<p class="Reference">
+<strong>Reference:</strong> <a href="https://doi.org/10.1371/journal.pcbi.1012960" target="_blank" rel="noopener"> Estimating Re and overdispersion in secondary cases from the size of identical sequence clusters of SARS-CoV-2 (PLOS Comput Biol) </a>
+</p>
+</div>
+<div class="tool-card">
+<p class="tool-title">
+Latent &amp; Infectious Period Estimators
+</p>
+<p class="tool-contrib">
+<strong>Contributors:</strong> RIVM, Netherlands
+</p>
+<p class="tool-desc">
+A set of estimators that link observed serial intervals and incidence data to the latent and infectious periods in SEIR/SIR models. The tools focus on identifying model-consistent parameterizations, clarifying parameter interpretation and supporting more robust model calibration.
+</p>
+<p class="tool-links">
+<strong>GitHub:</strong> <a href="https://github.com/rivm-syso/escape2024" target="_blank" rel="noopener"> rivm-syso/escape2024 </a>
+</p>
+<p class="Reference">
+<strong>Reference:</strong> <a href="https://github.com/rivm-syso/escape2024" target="_blank" rel="noopener"> ESCAPE 2024 technical repository (RIVM) </a>
+</p>
+</div>
+<hr>
+</section>
+<section id="reference-models" class="level2">
+<h2 class="anchored" data-anchor-id="reference-models">c.&nbsp;Reference models</h2>
+<p>Reference epidemic models that serve as benchmarks for comparison and projecting epidemic outcomes.</p>
+<div class="tool-card">
+<p class="tool-title">
+Mass-Action &amp; Configuration-Network Models
+</p>
+<p class="tool-contrib">
+<strong>Contributors:</strong> RIVM, Netherlands
+</p>
+<p class="tool-desc">
+A set of implementations comparing classical mass-action models and configuration-network models that incorporate degree heterogeneity. The tools provide analytic expressions and simulation workflows to explore how network structure affects quantities such as initial growth rate, epidemic peak size, and final size.
+</p>
+<p class="tool-links">
+<strong>GitHub:</strong> <a href="https://github.com/rivm-syso/mpox-network" target="_blank" rel="noopener"> rivm-syso/mpox-network (multi-layer model); </a> <a href="https://github.com/rivm-syso/escape2024" target="_blank" rel="noopener"> rivm-syso/escape2024 (reference models); </a> <a href="https://betterworlddev.org/r-virus/" target="_blank" rel="noopener"> outbreak visualization tool (developed by John Fisher and Ka Yin Leung) </a>
+</p>
+<p class="Reference">
+<strong>Reference:</strong> <a href="https://doi.org/10.1101/2025.07.18.25331780" target="_blank" rel="noopener"> Dynamic shift in the dominant transmission route of clade Ib mpox virus across networks with sexual and non-sexual contacts (medRxiv) </a>
+</p>
+</div>
+<div class="tool-card">
+<p class="tool-title">
+Epidemic Graph Diagram Framework
+</p>
+<p class="tool-contrib">
+<strong>Contributors:</strong> INSERM
+</p>
+<p class="tool-desc">
+The Epidemic Graph Diagram framework couples detailed disease progression with explicit contact network structure using a diagrammatic approach. It can be used to derive epidemic thresholds, study the impact of interventions and interpret complex models via graph operations.
+</p>
+<p class="tool-links">
+<strong>GitHub:</strong> <a href="https://zenodo.org/records/10012990" target="_blank" rel="noopener"> Zenodo: Epidemic Graph Diagram </a>
+</p>
+<p class="Reference">
+<strong>Reference:</strong> <a href="https://doi.org/10.1038/s41467-023-43856-1" target="_blank" rel="noopener"> Epidemic graph diagrams as analytics for epidemic control in the data-rich era (Nat Commun) </a>
+</p>
+</div>
+<hr>
+</section>
+<section id="epidemic-trends-and-measures" class="level2">
+<h2 class="anchored" data-anchor-id="epidemic-trends-and-measures">d.&nbsp;Epidemic trends &amp; effectiveness of measures</h2>
+<p>Tools for reconstructing epidemic trajectories and quantifying the impact of public health measures.</p>
+<div class="tool-card">
+<p class="tool-title">
+EpiLPS – Nowcasting and Time-Varying Rt
+</p>
+<p class="tool-contrib">
+<strong>Contributors:</strong> University of Hasselt
+</p>
+<p class="tool-desc">
+<code>EpiLPS</code> uses Bayesian Laplacian P-splines to jointly model reporting delays and latent incidence, providing nowcasts and estimates of the time-varying reproduction number. It is designed for operational use with unified workflows that can be updated in real time as new data arrive.
+</p>
+<p class="tool-links">
+<strong>GitHub:</strong> <a href="https://github.com/oswaldogressani/EpiLPS" target="_blank" rel="noopener"> oswaldogressani/EpiLPS </a>
+</p>
+<p class="Reference">
+<strong>Reference:</strong> <a href="https://doi.org/10.1371/journal.pcbi.1010618" target="_blank" rel="noopener"> EpiLPS: A fast and flexible Bayesian tool for estimation of the time-varying reproduction number (PLOS Comput Biol) </a>
+</p>
+</div>
+<div class="tool-card">
+<p class="tool-title">
+NPI Effectiveness Framework
+</p>
+<p class="tool-contrib">
+<strong>Contributors:</strong> RIVM, Netherlands
+</p>
+<p class="tool-desc">
+This framework reconstructs a counterfactual reproduction number in the absence of non-pharmaceutical interventions (NPIs), while accounting for immunity, seasonality and variant dynamics. Comparing the observed and counterfactual trajectories yields time-varying estimates of the combined effectiveness of NPIs.
+</p>
+<p class="tool-links">
+<strong>GitHub:</strong> <a href="https://github.com/rivm-syso/effectiveness_NPIs" target="_blank" rel="noopener"> rivm-syso/effectiveness_NPIs </a>
+</p>
+<p class="Reference">
+<strong>Reference:</strong> <a href="https://doi.org/10.1371/journal.pcbi.1013502" target="_blank" rel="noopener"> Estimating the effectiveness of non-pharmaceutical interventions against COVID-19 in the Netherlands (PLOS Comput Biol) </a>
+</p>
+</div>
+<div class="tool-card">
+<p class="tool-title">
+Next-Generation Matrix Perturbation Tools
+</p>
+<p class="tool-contrib">
+<strong>Contributors:</strong> University of Hasselt
+</p>
+<p class="tool-desc">
+A collection of tools for constructing next-generation matrices and performing sensitivity and elasticity analyses over time. They quantify the contribution of different groups (such as age group) to the reproduction number, guiding targeted interventions as epidemics evolve.
+</p>
+<p class="tool-links">
+<strong>GitHub:</strong> <a href="https://zenodo.org/records/14777392" target="_blank" rel="noopener"> Zenodo: BELCovAge Repository </a>
+</p>
+<p class="Reference">
+<strong>Reference:</strong> <a href="https://doi.org/10.1038/s41467-025-57087-z" target="_blank" rel="noopener"> Assessing the role of children in the COVID-19 pandemic in Belgium using perturbation analysis (Nat Commun) </a>
+</p>
+</div>
+<div class="tool-card">
+<p class="tool-title">
+Socio-Economic Contact Pattern Models
+</p>
+<p class="tool-contrib">
+<strong>Contributors:</strong> University of Bern
+</p>
+<p class="tool-desc">
+These models extend traditional age-structured contact matrices to include socio-economic dimensions such as education or neighbourhood deprivation. They help explore how social structure shapes infection risk and identify groups where tailored measures may be most effective.
+</p>
+<p class="tool-links">
+<strong>GitHub:</strong> <a href="https://github.com/ISPMBern/comix_SEP" target="_blank" rel="noopener"> ISPMBern/comix_SEP </a>
+</p>
+<p class="Reference">
+<strong>Reference:</strong> <a href="https://doi.org/10.1101/2025.03.24.25324502" target="_blank" rel="noopener"> Individual-based and neighbourhood-based socio-economic factors relevant for contact behaviour and epidemic control (medRxiv) </a>
+</p>
+</div>
+<hr>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+<script src="escape-tools_files/libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
